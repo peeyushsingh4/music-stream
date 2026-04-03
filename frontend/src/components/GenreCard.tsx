@@ -8,6 +8,15 @@ const genreColors: Record<string, string> = {
   jazz: "from-blue-600 to-indigo-700",
   electronic: "from-cyan-500 to-blue-500",
   classical: "from-amber-600 to-yellow-500",
+  "hip-hop": "from-yellow-500 to-orange-600",
+  rnb: "from-purple-600 to-pink-600",
+  ambient: "from-teal-500 to-emerald-600",
+  folk: "from-lime-600 to-green-700",
+  dance: "from-fuchsia-500 to-violet-600",
+  metal: "from-zinc-600 to-gray-800",
+  country: "from-amber-500 to-yellow-600",
+  latin: "from-rose-500 to-red-600",
+  blues: "from-sky-600 to-blue-700",
 };
 
 export default function GenreCard({ genre }: { genre: Genre }) {

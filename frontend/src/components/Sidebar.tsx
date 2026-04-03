@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Search, Library, Heart, Music } from "lucide-react";
+import { Home, Search, Library, Heart, Radio } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
@@ -17,8 +17,8 @@ export default function Sidebar() {
     <aside className="hidden md:flex flex-col w-60 bg-black h-full p-6 gap-6 fixed left-0 top-0 bottom-[90px] z-20">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2 mb-4">
-        <Music className="w-8 h-8 text-spotify-green" />
-        <span className="text-xl font-bold text-white">Music Stream</span>
+        <Radio className="w-8 h-8 text-spotify-green" />
+        <span className="text-xl font-bold text-white">Amplifier</span>
       </Link>
 
       {/* Main Nav */}

@@ -5,6 +5,22 @@ import { Play, Pause, Music } from "lucide-react";
 import { usePlayer } from "@/contexts/PlayerContext";
 import { Song } from "@/types";
 
+const CARD_COLORS = [
+  "from-pink-600 to-purple-700",
+  "from-blue-600 to-cyan-500",
+  "from-emerald-500 to-teal-600",
+  "from-orange-500 to-amber-600",
+  "from-red-600 to-pink-600",
+  "from-violet-600 to-indigo-600",
+  "from-teal-500 to-cyan-600",
+  "from-yellow-500 to-orange-500",
+];
+
+function getSongColor(id: string): string {
+  const charCode = id.charCodeAt(id.length - 1);
+  return CARD_COLORS[charCode % CARD_COLORS.length];
+}
+
 interface SongCardProps {
   song: Song;
   queue?: Song[];
@@ -26,7 +42,7 @@ export default function SongCard({ song, queue, index = 0 }: SongCardProps) {
   return (
     <div className="group p-4 rounded-md bg-spotify-dark-gray hover:bg-spotify-gray transition cursor-pointer">
       <div className="relative mb-4">
-        <div className="aspect-square rounded-md overflow-hidden bg-spotify-gray relative">
+        <div className="aspect-square rounded-md overflow-hidden relative">
           {song.cover_url ? (
             <Image
               src={song.cover_url}
@@ -36,8 +52,10 @@ export default function SongCard({ song, queue, index = 0 }: SongCardProps) {
               sizes="(max-width: 768px) 50vw, 200px"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <Music className="w-12 h-12 text-spotify-light-gray" />
+            <div
+              className={`w-full h-full bg-gradient-to-br ${getSongColor(song.id)} flex items-center justify-center`}
+            >
+              <Music className="w-12 h-12 text-white/70" />
             </div>
           )}
         </div>

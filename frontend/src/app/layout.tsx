@@ -12,8 +12,8 @@ export const dynamic = "force-dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Music Stream",
-  description: "A Spotify-inspired music streaming platform",
+  title: "Amplifier",
+  description: "Amplifier — your personal music streaming experience",
 };
 
 export default function RootLayout({
